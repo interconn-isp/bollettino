@@ -49,7 +49,8 @@ slip = Bollettino::Slip.new(
   payment_order: payment_order
 )
 
-slip.generate!('slip.png')
+generator = Bollettino::Generator.new
+generator.generate(slip, 'slip.png')
 ```
 
 ## Contributing
