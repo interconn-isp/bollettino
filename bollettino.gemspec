@@ -22,5 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
 
-  spec.add_runtime_dependency 'virtus'
+  spec.add_runtime_dependency 'virtus', '~> 1.0'
+  spec.add_runtime_dependency 'mini_magick', '~> 4.0'
 end
