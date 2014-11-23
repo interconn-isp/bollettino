@@ -5,7 +5,7 @@ Bollettino is a tool for generating Italian postal payment slips.
 Don't know what a postal payment slip is? Then you probably don't need this
 library. But here's an example anyway:
 
-![Postal payment slip](https://raw.githubusercontent.com/interconn-isp/bollettino/master/assets/slip.png)
+![Postal payment slip](https://raw.githubusercontent.com/interconn-isp/bollettino/master/example-slip.png)
 
 See all those blank spaces? Bollettino takes care of filling them. All you need
 is the data.
