@@ -9,8 +9,7 @@ which used the now abandoned [prawn-templates](https://github.com/prawnpdf/prawn
 
 ## Installation
 
-Postino depends on [ImageMagick](http://www.imagemagick.org/). Yes, you'll have
-to install it in order for the library to work. Sorry, guys.
+Postino depends on [ImageMagick](http://www.imagemagick.org/). Sorry, guys.
 
 Add this line to your application's `Gemfile`:
 
