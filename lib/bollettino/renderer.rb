@@ -1,3 +1,8 @@
+# Base rebder
+#
+# @abstract Subclass and override {.render} to create a renderer
+#
+# @author Alessandro Desantis <desa.alessandro@gmail.com>
 class Bollettino::Renderer
   KERNING_NORMAL = 1
 
@@ -8,7 +13,13 @@ class Bollettino::Renderer
   FONT_SIZE_NORMAL = 30
   FONT_SIZE_SMALL = 25
 
-  def self.render(image, record)
+  # Renders the given model on the image.
+  #
+  # @param image [MiniMagick::Image]
+  # @param model
+  #
+  # @abstract This method must be overridden by the renderers
+  def self.render(image, model)
     raise NotImplementedError
   end
 
@@ -25,6 +36,12 @@ class Bollettino::Renderer
     end
   end
 
+  # Rendering error
+  #
+  # This error is usually raised when some data can't be renderered because
+  # it's malformed.
+  #
+  # @author Alessandro Desantis <desa.alessandro@gmail.com>
   class RenderingError < StandardError
   end
 end
