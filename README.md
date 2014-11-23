@@ -76,3 +76,12 @@ generator.generate!(slip, 'slip.png')
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Maintainers
+
+Bollettino is developed and maintained by [Alessandro Desantis](https://github.com/alessandro1997)
+for [InterConn](http://www.interconn.it).
+
+## License
+
+Bollettino is released under the MIT license.
