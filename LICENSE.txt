@@ -1,4 +1,4 @@
-Copyright (c) 2014 Alessandro Desantis
+Copyright (c) 2014 InterConn
 
 MIT License
 
