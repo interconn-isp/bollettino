@@ -2,9 +2,15 @@
 
 Bollettino is a tool for generating Italian postal payment slips.
 
-It uses MiniMagick to produce a pre-compiled slip in the PNG format.
+Don't know what a postal payment slip is? Then you probably don't need this
+library. But here's an example anyway:
 
-It is the successor to [Postino](https://github.com/interconn-isp/postino),
+![Postal payment slip](https://raw.githubusercontent.com/interconn-isp/bollettino/master/assets/slip.png)
+
+See all those blank spaces? Bollettino takes care of filling them. All you need
+is the data.
+
+Bollettino is the successor to [Postino](https://github.com/interconn-isp/postino),
 which used the now abandoned [prawn-templates](https://github.com/prawnpdf/prawn-templates).
 
 ## Installation
