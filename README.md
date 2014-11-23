@@ -53,7 +53,7 @@ slip = Bollettino::Slip.new(
 )
 
 generator = Bollettino::Generator.new
-generator.generate(slip, 'slip.png')
+generator.generate!(slip, 'slip.png')
 ```
 
 ## Contributing
