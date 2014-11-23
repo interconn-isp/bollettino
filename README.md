@@ -1,11 +1,15 @@
 # Bollettino
 
-Bollettino is a tool for generating Italian postal payment slips. It uses
-RMagick to produce a PNG of a pre-compiled slip.
+Bollettino is a tool for generating Italian postal payment slips.
+
+It uses MiniMagick to produce a pre-compiled slip in the PNG format.
+
+It is the successor to [Postino](https://github.com/interconn-isp/postino),
+which used the now abandoned [prawn-templates](https://github.com/prawnpdf/prawn-templates).
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'bollettino'
