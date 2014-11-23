@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['desa.alessandro@gmail.com']
   spec.summary       = 'Bollettino is a tool for generating Italian postal payment slips.'
   spec.description   = 'Bollettino is a tool for generating postal payment slips in the Italian format.'
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = 'https://github.com/interconn-isp/bollettino'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
