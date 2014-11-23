@@ -1,5 +1,9 @@
 # Bollettino
 
+[![Build Status](https://travis-ci.org/interconn-isp/bollettino.svg?branch=master)](https://travis-ci.org/interconn-isp/bollettino)
+[![Dependency Status](https://gemnasium.com/interconn-isp/bollettino.svg)](https://gemnasium.com/interconn-isp/bollettino)
+[![Code Climate](https://codeclimate.com/github/interconn-isp/bollettino/badges/gpa.svg)](https://codeclimate.com/github/interconn-isp/bollettino)
+
 Bollettino is a tool for generating Italian postal payment slips.
 
 Don't know what a postal payment slip is? Then you probably don't need this
