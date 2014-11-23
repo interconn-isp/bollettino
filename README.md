@@ -77,6 +77,11 @@ generator.generate!(slip, 'slip.png')
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## Related projects
+
+For a command line interface that also supports generation from CSV files, see
+[bollettino-cli](https://github.com/interconn-isp/bollettino-cli).
+
 ## Maintainers
 
 Bollettino is developed and maintained by [Alessandro Desantis](https://github.com/alessandro1997).
