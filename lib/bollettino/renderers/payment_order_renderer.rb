@@ -19,15 +19,15 @@ class Bollettino::Renderer::PaymentOrderRenderer < Bollettino::Renderer
   end
 
   def self.render_reason(image, payment_order)
-    write_text(image, [90, 475], payment_order.reason[0..46].upcase)
-    write_text(image, [90, 435], payment_order.reason[47..93].upcase)
+    write_text(image, [90, 475], payment_order.reason[0..46])
+    write_text(image, [90, 435], payment_order.reason[47..93])
 
-    write_text(image, [1110, 475], payment_order.reason[0..60].upcase)
-    write_text(image, [1110, 435], payment_order.reason[61..121].upcase)
+    write_text(image, [1110, 475], payment_order.reason[0..60])
+    write_text(image, [1110, 435], payment_order.reason[61..121])
   end
 
   def self.render_text_amount(image, payment_order)
-    write_text(image, [245, 650], payment_order.text_amount[0..38].upcase)
-    write_text(image, [1435, 650], payment_order.text_amount[0..44].upcase)
+    write_text(image, [245, 650], payment_order.text_amount[0..38])
+    write_text(image, [1435, 650], payment_order.text_amount[0..44])
   end
 end

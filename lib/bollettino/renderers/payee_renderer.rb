@@ -13,10 +13,10 @@ class Bollettino::Renderer::PayeeRenderer < Bollettino::Renderer
   end
 
   def self.render_name(image, payee)
-    write_text(image, [90, 585], payee.name[0..46].upcase)
-    write_text(image, [90, 545], payee.name[47..93].upcase)
+    write_text(image, [90, 585], payee.name[0..46])
+    write_text(image, [90, 545], payee.name[47..93])
 
-    write_text(image, [1105, 590], payee.name[0..33].upcase, KERNING_BOX_SMALLER)
-    write_text(image, [1105, 545], payee.name[34..67].upcase, KERNING_BOX_SMALLER)
+    write_text(image, [1105, 590], payee.name[0..33], KERNING_BOX_SMALLER)
+    write_text(image, [1105, 545], payee.name[34..67], KERNING_BOX_SMALLER)
   end
 end

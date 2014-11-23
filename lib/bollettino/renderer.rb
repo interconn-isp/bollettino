@@ -17,7 +17,7 @@ class Bollettino::Renderer
       c.pointsize font_size
       c.gravity 'southwest'
       c.kerning kerning
-      c.draw %Q[text #{coords.join(',')} "#{text.gsub('"', '\"')}"]
+      c.draw %Q[text #{coords.join(',')} "#{text.to_s.upcase.gsub('"', '\"')}"]
     end
   end
 end

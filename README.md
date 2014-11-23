@@ -32,8 +32,7 @@ payer = Bollettino::Payer.new(
   address: Bollettino::Address.new(
     street: '3681 Foggy Moor',
     zip: '19147-0834',
-    city: 'Grayson',
-    state: 'Pennsylvania'
+    location: 'Grayson'
   )
 )
 

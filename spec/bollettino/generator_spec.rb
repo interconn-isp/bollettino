@@ -3,42 +3,48 @@ require 'spec_helper'
 RSpec.describe Bollettino::Generator do
   subject { described_class.new }
 
-  describe '#generate' do
+  describe '#generate!' do
     let(:slip) do
-      rs = (('A'..'Z').to_a*10).join('')
+      rs = (('A'..'Z').to_a * 10).join('')
 
-      Bollettino::Slip.new(
-        payee: Bollettino::Payee.new(
+      stub(
+        payee: stub(
           account_number: '0123456789',
           name: rs
         ),
-        payment_order: Bollettino::PaymentOrder.new(
+        payment_order: stub(
           numeric_amount: 1,
           text_amount: rs,
           reason: rs
         ),
-        payer: Bollettino::Payer.new(
+        payer: stub(
           name: rs,
-          address: Bollettino::Address.new(
+          address: stub(
             street: rs,
-            city: rs,
-            state: rs,
+            location: rs,
             zip: rs
           )
         )
       )
     end
 
-    let(:slip_path) { File.expand_path('../../../tmp/test_slip.png', __FILE__) }
+    it 'writes the image' do
+      image = mock()
+      image
+        .expects(:write)
+        .with('slip.png')
+        .once
 
-    before(:each) do
-      FileUtils.rm(slip_path) if File.exist?(slip_path)
-    end
+      MiniMagick::Image
+        .expects(:open)
+        .once
+        .returns(image)
 
-    it 'generates a PNG for the given slip' do
-      expect {
-        subject.generate(slip, slip_path)
-      }.to change{ File.exist?(slip_path) }.from(false).to(true)
+      Bollettino::Renderer::SlipRenderer
+        .expects(:render)
+        .once
+
+      subject.generate!(slip, 'slip.png')
     end
   end
 end
