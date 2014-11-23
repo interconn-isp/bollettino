@@ -8,6 +8,10 @@ class Bollettino::Renderer
   FONT_SIZE_NORMAL = 30
   FONT_SIZE_SMALL = 25
 
+  def self.render(image, record)
+    raise NotImplementedError
+  end
+
   protected
 
   def self.write_text(image, coords, text, kerning = KERNING_NORMAL, font_size = FONT_SIZE_NORMAL)
