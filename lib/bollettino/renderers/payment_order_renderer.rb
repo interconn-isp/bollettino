@@ -11,6 +11,10 @@ class Bollettino::Renderer::PaymentOrderRenderer < Bollettino::Renderer
     numeric_amount = payment_order.numeric_amount
     numeric_amount = ('%.2f' % numeric_amount).to_s.gsub('.', '')
 
+    if numeric_amount.length > 7
+      raise RenderingError, "Numeric amount can't be longer than 7 total digits"
+    end
+
     numeric_amount_x = 1000 - 35 * numeric_amount.length.to_i
 
     [[numeric_amount_x, 690], [numeric_amount_x + 1315, 690]].each do |coords|

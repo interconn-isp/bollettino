@@ -20,4 +20,7 @@ class Bollettino::Renderer
       c.draw %Q[text #{coords.join(',')} "#{text.to_s.upcase.gsub('"', '\"')}"]
     end
   end
+
+  class RenderingError < StandardError
+  end
 end

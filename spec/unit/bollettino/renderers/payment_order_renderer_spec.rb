@@ -19,5 +19,21 @@ RSpec.describe Bollettino::Renderer::PaymentOrderRenderer do
 
       subject.render image, payment_order
     end
+
+    context 'when numeric_amount is longer than 7 digits' do
+      it 'raises an error' do
+        payment_order = stub(
+          text_amount: 'Millecentociquanta/25',
+          numeric_amount: 123456.78,
+          reason: 'Invoce INV-1234'
+        )
+
+        image = stub()
+
+        expect {
+          subject.render image, payment_order
+        }.to raise_error(Bollettino::Renderer::RenderingError)
+      end
+    end
   end
 end

@@ -7,6 +7,10 @@ class Bollettino::Renderer::PayeeRenderer < Bollettino::Renderer
   private
 
   def self.render_account_number(image, payee)
+    if payee.account_number.length > 10
+      raise RenderingError, "Account number can't be longer than 10 characters"
+    end
+
     [[265, 695], [1310, 695]].each do |coords|
       write_text(image, coords, payee.account_number, KERNING_BOX)
     end
