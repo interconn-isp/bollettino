@@ -79,8 +79,9 @@ generator.generate!(slip, 'slip.png')
 
 ## Related projects
 
-For a command line interface that also supports generation from CSV files, see
-[bollettino-cli](https://github.com/interconn-isp/bollettino-cli).
+- For a command line interface that also supports generation from CSV files, see
+  [bollettino-cli](https://github.com/interconn-isp/bollettino-cli).
+- For converting numbers into words, see [Abaco](https://github.com/interconn-isp/abaco).
 
 ## Maintainers
 
