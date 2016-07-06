@@ -39,27 +39,27 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-payee = Bollettino::Payee.new(
+payee = Bollettino::Model::Payee.new(
   account_number: '0123456789',
   name: 'Acme Inc.'
 )
 
-payer = Bollettino::Payer.new(
+payer = Bollettino::Model::Payer.new(
   name: 'John Doe',
-  address: Bollettino::Address.new(
+  address: Bollettino::Model::Address.new(
     street: '3681 Foggy Moor',
     zip: '19147-0834',
     location: 'Grayson'
   )
 )
 
-payment_order = Bollettino::PaymentOrder.new(
+payment_order = Bollettino::Model::PaymentOrder.new(
   numeric_amount: 54.31,
   text_amount: 'Cinquantaquattro/31',
   reason: 'Invoice INV-1391'
 )
 
-slip = Bollettino::Slip.new(
+slip = Bollettino::Model::Slip.new(
   payee: payee,
   payer: payer,
   payment_order: payment_order
