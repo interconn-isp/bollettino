@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 RSpec.describe Bollettino::Generator do
@@ -29,7 +30,7 @@ RSpec.describe Bollettino::Generator do
     end
 
     it 'writes the image' do
-      image = mock()
+      image = mock
       image
         .expects(:write)
         .with('slip.png')
@@ -40,7 +41,7 @@ RSpec.describe Bollettino::Generator do
         .once
         .returns(image)
 
-      Bollettino::Renderer::SlipRenderer
+      Bollettino::Renderer::Slip
         .expects(:render)
         .once
 

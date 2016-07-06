@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.3'
   spec.add_development_dependency 'rspec', '~> 3.1'
   spec.add_development_dependency 'mocha', '~> 1.1'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-rspec'
 
   spec.add_runtime_dependency 'virtus', '~> 1.0'
   spec.add_runtime_dependency 'mini_magick', '~> 4.0'

@@ -1,17 +1,18 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 RSpec.describe 'The generation' do
   let(:payee) do
-    Bollettino::Payee.new(
+    Bollettino::Model::Payee.new(
       account_number: '0123456789',
       name: 'Acme Inc.'
     )
   end
 
   let(:payer) do
-    Bollettino::Payer.new(
+    Bollettino::Model::Payer.new(
       name: 'John Doe',
-      address: Bollettino::Address.new(
+      address: Bollettino::Model::Address.new(
         street: '3681 Foggy Moor',
         zip: '19147-0834',
         location: 'Grayson'
@@ -20,16 +21,15 @@ RSpec.describe 'The generation' do
   end
 
   let(:payment_order) do
-    Bollettino::PaymentOrder.new(
+    Bollettino::Model::PaymentOrder.new(
       numeric_amount: 54.31,
       text_amount: 'Cinquantaquattro/31',
       reason: 'Invoice INV-1391'
     )
-
   end
 
   let(:slip) do
-    Bollettino::Slip.new(
+    Bollettino::Model::Slip.new(
       payee: payee,
       payer: payer,
       payment_order: payment_order
@@ -45,6 +45,6 @@ RSpec.describe 'The generation' do
   it 'creates the slip' do
     expect {
       Bollettino::Generator.new.generate!(slip, slip_path)
-    }.to change{File.exist?(slip_path)}.from(false).to(true)
+    }.to change { File.exist?(slip_path) }.from(false).to(true)
   end
 end

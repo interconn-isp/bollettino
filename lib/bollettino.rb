@@ -1,21 +1,23 @@
+# frozen_string_literal: true
 require 'virtus'
 require 'mini_magick'
 
 require 'bollettino/version'
 
-require 'bollettino/models/address'
-require 'bollettino/models/payee'
-require 'bollettino/models/payer'
-require 'bollettino/models/payment_order'
-require 'bollettino/models/slip'
+require 'bollettino/model/base'
+require 'bollettino/model/address'
+require 'bollettino/model/payee'
+require 'bollettino/model/payer'
+require 'bollettino/model/payment_order'
+require 'bollettino/model/slip'
 
-require 'bollettino/renderer'
-
-require 'bollettino/renderers/address_renderer'
-require 'bollettino/renderers/payer_renderer'
-require 'bollettino/renderers/payee_renderer'
-require 'bollettino/renderers/payment_order_renderer'
-require 'bollettino/renderers/slip_renderer'
+require 'bollettino/renderer/base'
+require 'bollettino/renderer/errors'
+require 'bollettino/renderer/address'
+require 'bollettino/renderer/payer'
+require 'bollettino/renderer/payee'
+require 'bollettino/renderer/payment_order'
+require 'bollettino/renderer/slip'
 
 require 'bollettino/generator'
 
