@@ -1,36 +1,32 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 module Bollettino
   module Renderer
     RSpec.describe Payee do
       subject { described_class }
 
+      let(:payee) { instance_double('Bollettino::Model::Payee') }
+
+      before(:each) do
+        allow(payee).to receive(:account_number).and_return('0123456789')
+        allow(payee).to receive(:name).and_return('Acme Inc.')
+      end
+
       describe '.render' do
+        let(:image) { instance_double('MiniMagick::Image') }
+
         it 'renders the payee' do
-          payee = stub(
-            account_number: '0123456789',
-            name: 'Acme Inc.'
-          )
-
-          image = stub
-
-          subject
-            .expects(:write_text)
-            .times(6)
+          expect(subject).to receive(:write_text)
+            .exactly(6).times
 
           subject.render image, payee
         end
 
         context 'when account_number is longer than 10 characters' do
+          before(:each) do
+            allow(payee).to receive(:account_number).and_return('01234567891')
+          end
+
           it 'raises an error' do
-            payee = stub(
-            account_number: '01234567891',
-            name: 'Acme Inc.'
-          )
-
-            image = stub
-
             expect {
               subject.render image, payee
             }.to raise_error(RenderingError)

@@ -1,24 +1,23 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 module Bollettino
   module Renderer
     RSpec.describe Address do
       subject { described_class }
 
+      let(:address) { instance_double('Bollettino::Model::Address') }
+
+      before(:each) do
+        allow(address).to receive(:street).and_return('Via Fasulla, 123')
+        allow(address).to receive(:location).and_return('Roma')
+        allow(address).to receive(:zip).and_return('00100')
+      end
+
       describe '.render' do
+        let(:image) { instance_double('MiniMagick::Image') }
+
         it 'renders the address' do
-          address = stub(
-            street: 'Via Fasulla, 123',
-            location: 'Roma',
-            zip: '00100'
-          )
-
-          image = stub
-
-          subject
-            .expects(:write_text)
-            .times(6)
+          expect(subject).to receive(:write_text)
+            .exactly(6).times
 
           subject.render image, address
         end

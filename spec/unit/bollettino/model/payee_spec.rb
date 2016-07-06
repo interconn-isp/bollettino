@@ -1,14 +1,16 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 module Bollettino
   module Model
     RSpec.describe Payee do
-      it 'is instantiated correctly' do
+      subject do
         described_class.new(
           account_number: '0123456789',
           name: 'Acme Inc.'
         )
+      end
+
+      it 'is instantiated correctly' do
+        expect { subject }.not_to raise_error
       end
     end
   end

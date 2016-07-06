@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 RSpec.describe 'The generation' do
   let(:payee) do
     Bollettino::Model::Payee.new(

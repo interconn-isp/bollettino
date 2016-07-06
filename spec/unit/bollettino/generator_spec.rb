@@ -1,48 +1,19 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 RSpec.describe Bollettino::Generator do
   subject { described_class.new }
 
   describe '#generate!' do
-    let(:slip) do
-      rs = (('A'..'Z').to_a * 10).join('')
+    let(:slip) { instance_double('Bollettino::Model::Slip') }
+    let(:image) { instance_double('MiniMagick::Image') }
 
-      stub(
-        payee: stub(
-          account_number: '0123456789',
-          name: rs
-        ),
-        payment_order: stub(
-          numeric_amount: 1,
-          text_amount: rs,
-          reason: rs
-        ),
-        payer: stub(
-          name: rs,
-          address: stub(
-            street: rs,
-            location: rs,
-            zip: rs
-          )
-        )
-      )
+    before(:each) do
+      allow(MiniMagick::Image).to receive(:open).and_return(image)
+      allow(Bollettino::Renderer::Slip).to receive(:render)
     end
 
-    it 'writes the image' do
-      image = mock
-      image
-        .expects(:write)
+    it 'creates the image' do
+      expect(image).to receive(:write)
         .with('slip.png')
-        .once
-
-      MiniMagick::Image
-        .expects(:open)
-        .once
-        .returns(image)
-
-      Bollettino::Renderer::Slip
-        .expects(:render)
         .once
 
       subject.generate!(slip, 'slip.png')

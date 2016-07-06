@@ -1,37 +1,51 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 module Bollettino
   module Renderer
     RSpec.describe Slip do
       subject { described_class }
 
+      let(:slip) { instance_double('Bollettino::Model::Slip') }
+      let(:payee) { instance_double('Bollettino::Model::Payee') }
+      let(:payer) { instance_double('Bollettino::Model::Payer') }
+      let(:payment_order) { instance_double('Bollettino::Model::PaymentOrder') }
+
+      before(:each) do
+        allow(slip).to receive(:payee).and_return(payee)
+        allow(slip).to receive(:payer).and_return(payer)
+        allow(slip).to receive(:payment_order).and_return(payment_order)
+      end
+
       describe '.render' do
-        it 'renders the slip' do
-          slip = stub(
-            payee: stub,
-            payer: stub,
-            payment_order: stub
-          )
+        let(:image) { instance_double('MiniMagick::Image') }
 
-          image = stub
+        before(:each) do
+          allow(Payee).to receive(:render)
+          allow(Payer).to receive(:render)
+          allow(PaymentOrder).to receive(:render)
+        end
 
-          Payee
-            .expects(:render)
+        it 'renders the payee' do
+          expect(Payee).to receive(:render)
             .with(image, slip.payee)
             .once
 
-          Payer
-            .expects(:render)
+          subject.render(image, slip)
+        end
+
+        it 'renders the payer' do
+          expect(Payer).to receive(:render)
             .with(image, slip.payer)
             .once
 
-          PaymentOrder
-            .expects(:render)
+          subject.render(image, slip)
+        end
+
+        it 'renders the payment order' do
+          expect(PaymentOrder).to receive(:render)
             .with(image, slip.payment_order)
             .once
 
-          subject.render image, slip
+          subject.render(image, slip)
         end
       end
     end

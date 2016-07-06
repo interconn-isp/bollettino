@@ -24,7 +24,7 @@ Style/Documentation:
 
 RSpec/DescribeClass:
   Exclude:
-    - 'spec/requests/**/*'
+    - 'spec/integration/**/*'
 
 Style/BlockDelimiters:
   Exclude:
@@ -67,3 +67,4 @@ Style/AndOr:
 
 Rails/HasAndBelongsToMany:
   Enabled: false
+

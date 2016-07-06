@@ -1,28 +1,36 @@
 # frozen_string_literal: true
-require 'spec_helper'
-
 module Bollettino
   module Renderer
     RSpec.describe Payer do
       subject { described_class }
 
+      let(:payer) { instance_double('Bollettino::Model::Payer') }
+      let(:address) { instance_double('Bollettino::Model::Address') }
+
+      before(:each) do
+        allow(payer).to receive(:name).and_return('Acme Inc.')
+        allow(payer).to receive(:address).and_return(address)
+      end
+
       describe '.render' do
-        it 'renders the payer' do
-          payer = stub(
-            name: 'Acme Inc.',
-            address: stub
-          )
+        let(:image) { instance_double('ImageMagick::Image') }
 
-          image = stub
+        before(:each) do
+          allow(Address).to receive(:render)
+          allow(subject).to receive(:write_text)
+        end
 
-          Address
-            .expects(:render)
+        it 'renders the address' do
+          expect(Address).to receive(:render)
             .with(image, payer.address)
             .once
 
-          subject
-            .expects(:write_text)
-            .times(4)
+          subject.render image, payer
+        end
+
+        it 'renders the payer' do
+          expect(subject).to receive(:write_text)
+            .exactly(4).times
 
           subject.render image, payer
         end
