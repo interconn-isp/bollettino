@@ -1,7 +1,7 @@
 # Bollettino
 
 [![Gem Version](https://img.shields.io/gem/v/bollettino.svg?maxAge=3600&style=flat-square)](https://rubygems.org/gems/bollettino)
-[![Build Status](https://img.shields.io/travis/intercon-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://travis-ci.org/interconn-isp/bollettino)
+[![Build Status](https://img.shields.io/travis/interconn-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://travis-ci.org/interconn-isp/bollettino)
 [![Dependency Status](https://img.shields.io/gemnasium/interconn-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://gemnasium.com/github.com/interconn-isp/bollettino)
 [![Code Climate](https://img.shields.io/codeclimate/github/interconn-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://codeclimate.com/github/interconn-isp/bollettino)
 
