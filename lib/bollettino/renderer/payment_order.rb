@@ -13,7 +13,7 @@ module Bollettino
 
         def render_numeric_amount(image, payment_order)
           numeric_amount = payment_order.numeric_amount
-          numeric_amount = ('%.2f' % numeric_amount).delete('.')
+          numeric_amount = format('%.2f', numeric_amount).delete('.')
 
           if numeric_amount.length > 7
             fail RenderingError, "Numeric amount can't be longer than 7 total digits"
