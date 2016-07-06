@@ -1,9 +1,9 @@
 # Bollettino
 
-[![Gem Version](https://badge.fury.io/rb/bollettino.svg)](http://badge.fury.io/rb/bollettino)
-[![Build Status](https://travis-ci.org/interconn-isp/bollettino.svg?branch=master)](https://travis-ci.org/interconn-isp/bollettino)
-[![Dependency Status](https://gemnasium.com/interconn-isp/bollettino.svg)](https://gemnasium.com/interconn-isp/bollettino)
-[![Code Climate](https://codeclimate.com/github/interconn-isp/bollettino/badges/gpa.svg)](https://codeclimate.com/github/interconn-isp/bollettino)
+[![Gem Version](https://img.shields.io/gem/v/bollettino.svg?maxAge=3600&style=flat-square)](https://rubygems.org/gems/bollettino)
+[![Build Status](https://img.shields.io/travis/rust-lang/rust.svg?maxAge=3600&style=flat-square)](https://travis-ci.org/interconn-isp/bollettino)
+[![Dependency Status](https://img.shields.io/gemnasium/interconn-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://gemnasium.com/github.com/interconn-isp/bollettino)
+[![Code Climate](https://img.shields.io/codeclimate/github/interconn-isp/bollettino.svg?maxAge=3600&style=flat-square)](https://codeclimate.com/github/interconn-isp/bollettino)
 
 Bollettino is a tool for generating Italian postal payment slips.
 
