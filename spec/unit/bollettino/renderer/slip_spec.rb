@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Renderer
     RSpec.describe Slip do
@@ -9,7 +10,7 @@ module Bollettino
       let(:payer) { instance_double('Bollettino::Model::Payer') }
       let(:payment_order) { instance_double('Bollettino::Model::PaymentOrder') }
 
-      before(:each) do
+      before do
         allow(slip).to receive(:payee).and_return(payee)
         allow(slip).to receive(:payer).and_return(payer)
         allow(slip).to receive(:payment_order).and_return(payment_order)
@@ -18,7 +19,7 @@ module Bollettino
       describe '.render' do
         let(:image) { instance_double('MiniMagick::Image') }
 
-        before(:each) do
+        before do
           allow(Payee).to receive(:render)
           allow(Payer).to receive(:render)
           allow(PaymentOrder).to receive(:render)

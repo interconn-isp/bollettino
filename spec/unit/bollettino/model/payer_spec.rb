@@ -1,18 +1,19 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Model
     RSpec.describe Payer do
-      let(:address) { instance_double('Bollettino::Model::Address') }
-
-      before(:each) do
-        allow(address).to receive(:to_hash).and_return({})
-      end
-
       subject do
         described_class.new(
           name: 'John Doe',
           address: address
         )
+      end
+
+      let(:address) { instance_double('Bollettino::Model::Address') }
+
+      before do
+        allow(address).to receive(:to_hash).and_return({})
       end
 
       it 'is instantiated correctly' do

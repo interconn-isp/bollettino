@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Renderer
     RSpec.describe Payer do
@@ -7,7 +8,7 @@ module Bollettino
       let(:payer) { instance_double('Bollettino::Model::Payer') }
       let(:address) { instance_double('Bollettino::Model::Address') }
 
-      before(:each) do
+      before do
         allow(payer).to receive(:name).and_return('Acme Inc.')
         allow(payer).to receive(:address).and_return(address)
       end
@@ -15,7 +16,7 @@ module Bollettino
       describe '.render' do
         let(:image) { instance_double('ImageMagick::Image') }
 
-        before(:each) do
+        before do
           allow(Address).to receive(:render)
           allow(subject).to receive(:write_text)
         end

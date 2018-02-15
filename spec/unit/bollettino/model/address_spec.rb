@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Model
     RSpec.describe Address do

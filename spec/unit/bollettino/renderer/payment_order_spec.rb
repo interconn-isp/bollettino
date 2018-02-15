@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Renderer
     RSpec.describe PaymentOrder do
@@ -6,7 +7,7 @@ module Bollettino
 
       let(:payment_order) { instance_double('Bollettino::Model::PaymentOrder') }
 
-      before(:each) do
+      before do
         allow(payment_order).to receive(:text_amount).and_return('Millecentociquanta/25')
         allow(payment_order).to receive(:numeric_amount).and_return(1150.25)
         allow(payment_order).to receive(:reason).and_return('Invoice INV-1234')
@@ -23,7 +24,7 @@ module Bollettino
         end
 
         context 'when numeric_amount is longer than 7 digits' do
-          before(:each) do
+          before do
             allow(payment_order).to receive(:numeric_amount).and_return(123_456.78)
           end
 

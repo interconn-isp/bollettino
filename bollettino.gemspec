@@ -1,4 +1,6 @@
-# coding: utf-8
+
+# frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'bollettino/version'
@@ -9,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Alessandro Desantis']
   spec.email         = ['desa.alessandro@gmail.com']
   spec.summary       = 'Bollettino is a tool for generating Italian postal payment slips.'
-  spec.description   = 'Bollettino is a tool for generating postal payment slips in the Italian format.'
   spec.homepage      = 'https://github.com/interconn-isp/bollettino'
   spec.license       = 'MIT'
 
@@ -24,6 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.52'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.22'
 
-  spec.add_runtime_dependency 'virtus', '~> 1.0'
   spec.add_runtime_dependency 'mini_magick', '~> 4.8'
+  spec.add_runtime_dependency 'virtus', '~> 1.0'
 end

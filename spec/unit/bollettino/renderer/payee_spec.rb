@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Bollettino
   module Renderer
     RSpec.describe Payee do
@@ -6,7 +7,7 @@ module Bollettino
 
       let(:payee) { instance_double('Bollettino::Model::Payee') }
 
-      before(:each) do
+      before do
         allow(payee).to receive(:account_number).and_return('0123456789')
         allow(payee).to receive(:name).and_return('Acme Inc.')
       end
@@ -22,7 +23,7 @@ module Bollettino
         end
 
         context 'when account_number is longer than 10 characters' do
-          before(:each) do
+          before do
             allow(payee).to receive(:account_number).and_return('01234567891')
           end
 

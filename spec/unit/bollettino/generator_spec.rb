@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe Bollettino::Generator do
   subject { described_class.new }
 
@@ -6,7 +7,7 @@ RSpec.describe Bollettino::Generator do
     let(:slip) { instance_double('Bollettino::Model::Slip') }
     let(:image) { instance_double('MiniMagick::Image') }
 
-    before(:each) do
+    before do
       allow(MiniMagick::Image).to receive(:open).and_return(image)
       allow(Bollettino::Renderer::Slip).to receive(:render)
     end

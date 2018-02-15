@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe 'The generation' do
   let(:payee) do
     Bollettino::Model::Payee.new(
@@ -36,7 +37,7 @@ RSpec.describe 'The generation' do
 
   let(:slip_path) { File.expand_path('../../../tmp/slip.png', __FILE__) }
 
-  before(:each) do
+  before do
     FileUtils.rm(slip_path) if File.exist?(slip_path)
   end
 
