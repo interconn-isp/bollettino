@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/interconn-isp/bollettino.svg?branch=master)](https://travis-ci.org/interconn-isp/bollettino)
 [![Dependency Status](https://gemnasium.com/badges/github.com/interconn-isp/bollettino.svg)](https://gemnasium.com/github.com/interconn-isp/bollettino)
 [![Maintainability](https://api.codeclimate.com/v1/badges/27f20f87ffab300c2530/maintainability)](https://codeclimate.com/github/interconn-isp/bollettino/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/interconn-isp/bollettino/badge.svg?branch=master)](https://coveralls.io/github/interconn-isp/bollettino?branch=master)
 
 Bollettino is a tool for generating Italian postal payment slips.
 
