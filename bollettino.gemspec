@@ -18,12 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'rubocop-rspec'
+  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'rspec', '~> 3.7'
+  spec.add_development_dependency 'rubocop', '~> 0.52'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.22'
 
-  spec.add_runtime_dependency 'virtus', '~> 1.0.5'
-  spec.add_runtime_dependency 'mini_magick', '~> 4.5.1'
+  spec.add_runtime_dependency 'virtus', '~> 1.0'
+  spec.add_runtime_dependency 'mini_magick', '~> 4.8'
 end
